@@ -232,6 +232,7 @@ function simulate() {
   document.getElementById("transition").innerHTML = "";
   if (currentFSM === FSM1) {
     if (!validateInput(input5)) {
+      console.log("fuck no tis the wrong character");
       document.getElementById("transition").innerHTML =
         "Please only input a or b characters";
     } else {
@@ -241,6 +242,7 @@ function simulate() {
     }
   } else {
     if (!validateInput2(input5)) {
+      console.log("fuck no tis the wrong character");
       document.getElementById("transition").innerHTML =
         "Please only input 1 or 0 characters";
     } else {
