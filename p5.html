@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+    <title>BRother</title>
+    <style>
+      myContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #canvas-container {
+        position: relative;
+      }
+
+      canvas {
+        border: 1px solid #ccc;
+      }
+      button {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button onclick="showFSM1()">Finite State Machine 1</button>
+      <button onclick="showFSM2()">Finite State Machine 2</button>
+    </nav>
+    <div>
+      <label for="input5">Input 5:</label>
+      <input type="text" id="input5" />
+    </div>
+
+    <button onclick="simulate()">Simulate</button>
+    <p id="valid"></p>
+    <div id="myContainer"></div>
+  </body>
+</html>
