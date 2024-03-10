@@ -230,6 +230,7 @@ function validateInput2(inputStr) {
 function simulate() {
   let input5 = document.getElementById("input5").value;
   document.getElementById("transition").innerHTML = "";
+  document.getElementById("valid").innerHTML = "";
   if (currentFSM === FSM1) {
     if (!validateInput(input5)) {
       console.log("fuck no tis the wrong character");
