@@ -232,21 +232,21 @@ function simulate() {
   document.getElementById("transition").innerHTML = "";
   if (currentFSM === FSM1) {
     if (!validateInput(input5)) {
-      document.getElementById("valid").innerHTML =
+      document.getElementById("transition").innerHTML =
         "Please only input a or b characters";
     } else {
       currentState = currentFSM.q0;
       simulateInput(input5);
-      document.getElementById("valid").innerHTML = "";
+      document.getElementById("transition").innerHTML = "";
     }
   } else {
     if (!validateInput2(input5)) {
-      document.getElementById("valid").innerHTML =
+      document.getElementById("transition").innerHTML =
         "Please only input 1 or 0 characters";
     } else {
       currentState = currentFSM.q0;
       simulateInput(input5);
-      document.getElementById("valid").innerHTML = "";
+      document.getElementById("transition").innerHTML = "";
     }
   }
 }
@@ -279,7 +279,7 @@ function simulateInput(input) {
         currentState = t.to;
         validTransition = true;
         document.getElementById("transition").innerHTML +=
-          " " + currentFSM.name + " " + t.input + " ---> ";
+          " " + currentState.name + " " + t.input + " ---> ";
         break;
       }
     }
