@@ -219,12 +219,36 @@ function showFSM2() {
   currentState = FSM2.q0;
   currentFSM = FSM2;
 }
-
+function validateInput(inputStr) {
+  const pattern = /^[ab]*$/;
+  return pattern.test(inputStr);
+}
+function validateInput2(inputStr) {
+  const pattern = /^[10]*$/;
+  return pattern.test(inputStr);
+}
 function simulate() {
   let input5 = document.getElementById("input5").value;
-  currentState = currentFSM.q0;
-  document.getElementById("valid").innerHTML = "";
-  simulateInput(input5);
+  document.getElementById("transition").innerHTML = "";
+  if (currentFSM === FSM1) {
+    if (!validateInput(input5)) {
+      document.getElementById("valid").innerHTML =
+        "Please only input a or b characters";
+    } else {
+      currentState = currentFSM.q0;
+      simulateInput(input5);
+      document.getElementById("valid").innerHTML = "";
+    }
+  } else {
+    if (!validateInput2(input5)) {
+      document.getElementById("valid").innerHTML =
+        "Please only input 1 or 0 characters";
+    } else {
+      currentState = currentFSM.q0;
+      simulateInput(input5);
+      document.getElementById("valid").innerHTML = "";
+    }
+  }
 }
 
 function simulateInput(input) {
@@ -254,6 +278,8 @@ function simulateInput(input) {
       if (t.input === key) {
         currentState = t.to;
         validTransition = true;
+        document.getElementById("transition").innerHTML +=
+          " " + currentFSM.name + " " + t.input + " ---> ";
         break;
       }
     }
